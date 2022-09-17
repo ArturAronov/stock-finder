@@ -6,28 +6,23 @@ const Earnings = props => {
   return(
     <Container maxWidth='888px' mt='10'>
       <Chart
-        width='90px'
-        height='90px'
         data={{
-          datasets: [{
-            type: 'line',
-            label: 'Estimated Earnings',
-            // data: props.estimatedData,
-            data: ['1', '2', '3', '4', '5'],
-            borderColor: 'rgba(255, 99, 132, 1)',
-          },
+          datasets: [
+          //   {
+          //   type: 'line',
+          //   label: 'Estimated Earnings',
+          //   data: props.estimatedData,
+          //   borderColor: 'rgba(255, 99, 132, 1)',
+          // },
           {
             type: 'bar',
             label: 'Reported Earnings',
-            // data: props.reportedData,
-            data: ['1', '2', '3', '4', '5'],
+            data: props.reportedData,
             backgroundColor: 'rgba(53, 162, 235, 0.5)',
           },
         ],
-          // labels: props.labels,
-          labels: ['1', '2', '3', '4', '5'],
+          labels: props.labels,
         }}
-        style={{maxWidth: '98%'}}
       />
     </Container>
   )
