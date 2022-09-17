@@ -7,26 +7,24 @@ const Earnings = props => {
     <Container maxWidth='888px' mt='10'>
       <Chart
         data={{
-          datasets: [
-            {
+          labels: props.labels,
+          datasets: [{
             type: 'line',
             label: 'Estimated Earnings',
             data: props.estimatedData,
             borderColor: 'rgba(255, 99, 132, 1)',
+            pointStyle: 'dot',
+            borderWidth: 3
           },
-          // {
-          //   type: 'bar',
-          //   label: 'Reported Earnings',
-          //   data: props.reportedData,
-          //   backgroundColor: 'rgba(53, 162, 235, 0.5)',
-          // },
+          {
+            type: 'bar',
+            label: 'Reported Earnings',
+            data: props.reportedData,
+            backgroundColor: 'rgba(53, 162, 235, 0.5)',
+          },
         ],
-          labels: props.labels,
         }}
-        options={{
-          responsive: true,
-        }}
-        fallbackContent={<div>asdf</div>}
+        style={{maxWidth: '98%'}}
       />
     </Container>
   )
