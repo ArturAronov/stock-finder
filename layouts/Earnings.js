@@ -4,7 +4,7 @@ import { Chart } from 'react-chartjs-2'
 
 const Earnings = props => {
   return(
-    <Container maxWidth='888px' mt='10'>
+    <>
       <Chart
         data={{
           labels: props.labels,
@@ -26,7 +26,7 @@ const Earnings = props => {
         }}
         style={{maxWidth: '98%'}}
       />
-    </Container>
+    </>
   )
 }
 
