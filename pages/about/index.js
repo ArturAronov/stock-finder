@@ -22,7 +22,7 @@ const About = () => {
           </Link>
         </ListItem>
         <ListItem>
-          <Link href='https://chakra-ui.com' isExternal>
+          <Link href='https://github.com/ArturAronov/stock-finder' isExternal>
             Github Repo <ExternalLinkIcon mx='2px' />
           </Link>
         </ListItem>
