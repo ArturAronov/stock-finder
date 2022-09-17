@@ -14,12 +14,12 @@ const Earnings = props => {
           //   data: props.estimatedData,
           //   borderColor: 'rgba(255, 99, 132, 1)',
           // },
-          {
-            type: 'bar',
-            label: 'Reported Earnings',
-            data: props.reportedData,
-            backgroundColor: 'rgba(53, 162, 235, 0.5)',
-          },
+          // {
+          //   type: 'bar',
+          //   label: 'Reported Earnings',
+          //   data: props.reportedData,
+          //   backgroundColor: 'rgba(53, 162, 235, 0.5)',
+          // },
         ],
           labels: props.labels,
         }}
