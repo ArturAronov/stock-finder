@@ -26,6 +26,7 @@ const Earnings = props => {
         options={{
           responsive: true,
         }}
+        fallbackContent={<div>asdf</div>}
       />
     </Container>
   )
