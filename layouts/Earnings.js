@@ -1,10 +1,48 @@
 import { Container } from '@chakra-ui/react'
+import { Bar } from 'react-chartjs-2'
+import { Chart, CategoryScale, LinearScale, BarElement } from 'chart.js';
+Chart.register(CategoryScale, LinearScale, BarElement)
+
+
+const Earnings = props => {
+  const labels = props.labels
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'dataset',
+      data: props.reportedData,
+      backgroundColor: ['rgba(255, 99, 132, 0.2)'],
+      borderColor: ['rgba(53, 162, 235, 0.5)'],
+      borderWidth: 1
+    }]
+  };
+
+
+  return(
+    <Container maxWidth='888px' mt='10'>
+      <Bar
+        data={data}
+        options={{
+          maintainAspectRatio: false
+        }}
+      />
+    </Container>
+  )
+}
+
+export default Earnings
+
+
+
+
+/*
+import { Container } from '@chakra-ui/react'
 import { Chart as ChartJS } from 'chart.js/auto';
 import { Chart } from 'react-chartjs-2'
 
 const Earnings = props => {
   return(
-    <>
+    <Container maxWidth='888px' mt='10'>
       <Chart
         data={{
           labels: props.labels,
@@ -26,8 +64,10 @@ const Earnings = props => {
         }}
         style={{maxWidth: '98%'}}
       />
-    </>
+    </Container>
   )
 }
 
 export default Earnings
+
+*/
