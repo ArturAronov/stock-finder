@@ -2,20 +2,16 @@ import { Container } from '@chakra-ui/react'
 import { Chart as ChartJS } from 'chart.js/auto';
 import { Chart } from 'react-chartjs-2'
 
-const lol = ['1', '2', '3', '4', '5']
-const lolz = ['1', '2', '3', '4', '5']
-const lolzz = ['1', '2', '3', '4', '5']
-
 const Earnings = props => {
   return(
     <Container maxWidth='888px' mt='10'>
       <Chart
         data={{
-          labels: lolzz,
+          labels: props.labels,
           datasets: [{
             type: 'line',
             label: 'Estimated Earnings',
-            data: lol,
+            data: props.estimatedData,
             borderColor: 'rgba(255, 99, 132, 1)',
             pointStyle: 'dot',
             borderWidth: 3
@@ -23,10 +19,35 @@ const Earnings = props => {
           {
             type: 'bar',
             label: 'Reported Earnings',
-            data: lolz,
+            data: props.reportedData,
             backgroundColor: 'rgba(53, 162, 235, 0.5)',
           },
         ],
+        }}
+        options={{
+          plugins: {
+            // show legends for our graph
+            legend: {
+              display: true,
+            },
+          },
+          lineHeightAnnotation: {
+            always: true,
+            lineWeight: 1.5,
+          },
+
+        //   animate in
+          animation: {
+            duration: 1,
+          },
+          maintainAspectRatio: false,
+          responsive: true,
+
+        //   show the x and y scales
+          scales: {
+            x: { display: true },
+            y: { display: true },
+          },
         }}
         style={{maxWidth: '98%'}}
       />
