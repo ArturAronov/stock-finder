@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { Button, ButtonGroup } from '@chakra-ui/react'
 
-import useIncomeStatement from '../../../hooks/useIncomeStatement'
+import useStockData from '../../../hooks/useStockData'
 
 const IncomeStatement = () => {
   const [ ticker, setTicker ] = useState('')
-  const { incomeStatement } = useIncomeStatement(ticker)
+  const { incomeStatement } = useStockData(ticker)
   const router = useRouter()
 
   useEffect(() => {
