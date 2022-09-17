@@ -6,6 +6,8 @@ const Earnings = props => {
   return(
     <Container maxWidth='888px' mt='10'>
       <Chart
+        width='90px'
+        height='90px'
         data={{
           datasets: [{
             type: 'line',
