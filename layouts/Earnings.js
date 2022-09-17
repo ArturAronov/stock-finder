@@ -1,5 +1,5 @@
 import { Container } from '@chakra-ui/react'
-import { Chart as ChartJS, defaults } from 'chart.js';
+import { Chart as ChartJS, defaults } from 'chart.js/auto';
 import { Chart } from 'react-chartjs-2'
 
 const Earnings = props => {
@@ -12,8 +12,6 @@ const Earnings = props => {
             label: 'Estimated Earnings',
             data: props.estimatedData,
             borderColor: 'rgba(255, 99, 132, 1)',
-            pointStyle: 'dot',
-            borderWidth: 3
           },
           {
             type: 'bar',
@@ -24,7 +22,6 @@ const Earnings = props => {
         ],
           labels: props.labels,
         }}
-        style={{maxWidth: '98%'}}
       />
     </Container>
   )
