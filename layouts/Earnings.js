@@ -23,6 +23,9 @@ const Earnings = props => {
         ],
           labels: props.labels,
         }}
+        options={{
+          responsive: true,
+        }}
       />
     </Container>
   )
