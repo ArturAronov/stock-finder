@@ -5,7 +5,7 @@ import { Chart } from 'react-chartjs-2'
 const Earnings = props => {
   return(
     <Container maxWidth='888px' mt='10'>
-      {/* <Chart
+      <Chart
         data={{
           datasets: [{
             type: 'line',
@@ -22,7 +22,7 @@ const Earnings = props => {
         ],
           labels: props.labels,
         }}
-      /> */}
+      />
     </Container>
   )
 }
