@@ -8,12 +8,12 @@ const Earnings = props => {
       <Chart
         data={{
           datasets: [
-          //   {
-          //   type: 'line',
-          //   label: 'Estimated Earnings',
-          //   data: props.estimatedData,
-          //   borderColor: 'rgba(255, 99, 132, 1)',
-          // },
+            {
+            type: 'line',
+            label: 'Estimated Earnings',
+            data: props.estimatedData,
+            borderColor: 'rgba(255, 99, 132, 1)',
+          },
           // {
           //   type: 'bar',
           //   label: 'Reported Earnings',
