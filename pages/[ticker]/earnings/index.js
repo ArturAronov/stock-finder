@@ -1,15 +1,57 @@
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 
+import Error from '../../../layouts/Error'
+import Earnings from '../../../layouts/Earnings'
+
+import { parseData } from '../../../utils/parseData'
+
+import useToggleState from '../../../hooks/useToggleState'
+import useStockData from '../../../hooks/useStockData'
+
 const TickerEarnings = () => {
+  const [ ticker, setTicker ] = useState('')
+  const [ data, setData ] = useState([])
+  const [ error, setError ] = useState(null)
+  const [ layout, setLayout ] = useState([])
+  const { toggle } = useToggleState()
+  const { earnings } = useStockData(ticker)
   const router = useRouter()
 
   useEffect(() => {
-  }, [router.query])
+    let labels
+    let reportedData
+    let estimatedData
+
+    if(error) {
+      setLayout(<Error error={error}/>)
+    }
+
+    if(earnings?.symbol) {
+      labels = data.map(element => element.fiscalDateEnding)
+      reportedData= data.map(element => element.reportedEPS)
+      estimatedData = data.map(element => element.estimatedEPS)
+
+      setLayout(<Earnings labels={labels} reportedData={reportedData} estimatedData={estimatedData}/>)
+    }
+
+  }, [data, error])
+
+  useEffect(() => {
+    if(router?.query?.ticker) {
+      setTicker(router.query.ticker)
+    }
+
+    if(earnings?.symbol) {
+      const parsedData = parseData(toggle, earnings, 'annualEarnings', 'quarterlyEarnings')
+      setData(parsedData)
+    } else if(earnings?.error) {
+      setError(earnings.error)
+    }
+  }, [router.query, toggle, earnings])
   return (
     <>
-    {/* {console.log(router.query)} */}
-      Earnings
+      { layout }
     </>
   )
 }
