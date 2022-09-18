@@ -24,7 +24,6 @@ const Earnings = props => {
           },
         ],
         }}
-        style={{maxWidth: '98%'}}
       />
     </Container>
   )
