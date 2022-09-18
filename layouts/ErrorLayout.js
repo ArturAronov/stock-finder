@@ -1,6 +1,6 @@
 import { Box, Center } from '@chakra-ui/react'
 
-const Error = props => {
+const ErrorLayout = props => {
   return (
     <Box mt='10' color='red'>
       <Center>
@@ -10,4 +10,4 @@ const Error = props => {
   )
 }
 
-export default Error
+export default ErrorLayout

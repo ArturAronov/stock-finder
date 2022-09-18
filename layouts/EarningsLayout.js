@@ -2,7 +2,7 @@ import { Container } from '@chakra-ui/react'
 import { Chart as ChartJS } from 'chart.js/auto';
 import { Chart } from 'react-chartjs-2'
 
-const Earnings = props => {
+const EarningsLayout = props => {
   return(
     <Container maxWidth='888px' mt='10'>
       <Chart
@@ -29,4 +29,4 @@ const Earnings = props => {
   )
 }
 
-export default Earnings
+export default EarningsLayout
