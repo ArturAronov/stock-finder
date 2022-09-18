@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 
-import Error from '../../../layouts/Error'
-import Earnings from '../../../layouts/Earnings'
+import ErrorLayout from '../../../layouts/ErrorLayout'
+import EarningsLayout from '../../../layouts/EarningsLayout'
 
 import { parseData } from '../../../utils/parseData'
 
@@ -24,7 +24,7 @@ const TickerEarnings = () => {
     let estimatedData
 
     if(error) {
-      setLayout(<Error error={error}/>)
+      setLayout(<ErrorLayout error={error}/>)
     }
 
     if(earnings?.symbol) {
@@ -32,7 +32,7 @@ const TickerEarnings = () => {
       reportedData= data.map(element => element.reportedEPS)
       estimatedData = data.map(element => element.estimatedEPS)
 
-      setLayout(<Earnings labels={labels} reportedData={reportedData} estimatedData={estimatedData}/>)
+      setLayout(<EarningsLayout labels={labels} reportedData={reportedData} estimatedData={estimatedData}/>)
     }
 
   }, [data, error])
