@@ -6,7 +6,6 @@ const TableFooter = props => {
       <Tr>
         <Th></Th>
         {
-          props.data &&
           props.data.map((element, index) => (
             <Th key={index} textAlign="center"> { element.fiscalDateEnding } </Th>
           ))
