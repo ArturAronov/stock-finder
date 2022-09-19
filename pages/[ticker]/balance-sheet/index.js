@@ -16,11 +16,10 @@ import useToggleState from '../../../hooks/useToggleState'
 const BalanceSheet = () => {
   const [ ticker, setTicker ] = useState()
   const [ dates, setDates ] = useState([])
-  const [ cashflowState, setCashflowState ] = useState([])
   const [ balanceSheetState, setBalancesSheetState ] = useState([])
   const [ error, setError ] = useState(false)
   const [ layout, setLayout ] = useState()
-  const { cashflow, balanceSheet } = useStockData(ticker)
+  const { balanceSheet } = useStockData(ticker)
   const { toggle } = useToggleState()
 
   const router = useRouter()
@@ -28,22 +27,14 @@ const BalanceSheet = () => {
   useEffect(() => {
     if(error) {
       setLayout(<ErrorLayout error={error} />)
-    } else if(!error, cashflowState.length === 0, balanceSheetState.length === 0){
+    } else if(!error, balanceSheetState.length === 0){
       setLayout(<Image src={Loading} alt="my gif" height={50} width={50} />)
     } else {
-      setLayout(<BalanceSheetLayout cashflowState={cashflowState} balanceSheetState={balanceSheetState} dates={dates} />)
+      setLayout(<BalanceSheetLayout balanceSheetState={balanceSheetState} dates={dates} />)
     }
-  }, [cashflowState, balanceSheetState, error])
+  }, [balanceSheetState, error])
 
   useEffect(() => {
-    if(cashflow && cashflow?.error) {
-      setError(cashflow.error)
-    } else if(cashflow) {
-      const parsedData = parseData(toggle, cashflow, 'annualReports', 'quarterlyReports')
-      setCashflowState(parsedData)
-      setDates(parsedData)
-    }
-
     if(balanceSheet && balanceSheet?.error) {
       setError(balanceSheet.error)
     } else if(balanceSheet) {
@@ -52,7 +43,7 @@ const BalanceSheet = () => {
       setDates(parsedData)
     }
 
-  }, [cashflow, balanceSheet, toggle])
+  }, [balanceSheet, toggle])
 
   useEffect(() => {
     setTicker(router.query.ticker)
