@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { Center } from '@chakra-ui/react'
 
 import Loading from '../../../media/loading.gif'
+
 import { parseData } from '../../../utils/parseData'
 
 import CashflowLayout from '../../../layouts/CashflowLayout'
@@ -11,6 +12,7 @@ import ErrorLayout from '../../../layouts/ErrorLayout'
 
 import useStockData from '../../../hooks/useStockData'
 import useToggleState from '../../../hooks/useToggleState'
+
 const Cashflow = () => {
   const [ ticker, setTicker ] = useState()
   const [ dates, setDates ] = useState([])
@@ -34,12 +36,6 @@ const Cashflow = () => {
   }, [cashflowState, balanceSheetState, error])
 
   useEffect(() => {
-    // if(cashflow) {
-    //   const parsedData = parseData(toggle, cashflow, 'annualReports', 'quarterlyReports')
-    //   setCashflowState(parsedData)
-    //   setDates(parsedData)
-    // }
-
     if(cashflow && cashflow?.error) {
       setError(cashflow.error)
     } else if(cashflow) {
@@ -64,7 +60,6 @@ const Cashflow = () => {
 
   return (
     <Center mt='10'>
-      { console.log(balanceSheet) }
       {
         layout
       }
