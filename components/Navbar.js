@@ -5,7 +5,16 @@ const Navbar = () => {
   return(
     <Flex boxShadow='lg' alignItems="center" bg='gray.300'>
       <Center alignItems="center">
-        <Text fontSize='2xl' color='gray.900' ml='2' onClick={() => router.push('/')} className='cursor'>
+        <Text
+          bgGradient='linear(to-l, #7928CA, #FF0080)'
+          bgClip='text'
+          fontWeight='bold'
+          fontSize='2xl'
+          // color='gray.900'
+          ml='2'
+          className='cursor'
+          onClick={() => router.push('/')}
+        >
           Stock Finder
         </Text>
       </Center>
