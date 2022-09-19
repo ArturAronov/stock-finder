@@ -3,7 +3,7 @@ import axios from 'axios'
 
 const useStockData = ticker => {
   const fetcher = url => axios.get(url).then((res) => {
-    if(res?.data?.symbol) {
+    if(res?.data?.symbol || res?.data?.Symbol) {
       return res.data
     } else {
       return {error: `No data available for ticker $${ticker.toUpperCase()}`}
