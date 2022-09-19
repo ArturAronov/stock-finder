@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { Center } from '@chakra-ui/react'
 
 import ErrorLayout from '../../../layouts/ErrorLayout'
 import EarningsLayout from '../../../layouts/EarningsLayout'
@@ -50,9 +51,9 @@ const TickerEarnings = () => {
     }
   }, [router.query, toggle, earnings])
   return (
-    <>
+    <Center mt='10'>
       { layout }
-    </>
+    </Center>
   )
 }
 
