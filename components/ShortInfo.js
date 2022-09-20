@@ -18,22 +18,22 @@ const ShortInfo = () => {
     <Container justify='center' my='3'>
       <Center>
         <Text fontSize='sm' fontWeight='semibold'>
-          {`${overview?.Symbol} - ${overview?.Name}`}
+          {overview?.Symbol && `${overview?.Symbol} - ${overview?.Name}`}
         </Text>
       </Center>
       <Center>
         <Text fontSize='sm' fontWeight='semibold'>
-          {overview?.Sector}
+          {overview?.Sector && overview?.Sector}
         </Text>
       </Center>
       <Center>
         <Text fontSize='sm' fontWeight='semibold'>
-          {`CIK: ${overview?.CIK}`}
+          {overview?.CIK && `CIK: ${overview?.CIK}`}
         </Text>
       </Center>
       <Center>
         <Text fontSize='sm' fontWeight='semibold'>
-          {`Exchange: ${overview?.Exchange}`}
+          {overview?.Exchange && `Exchange: ${overview?.Exchange}`}
         </Text>
       </Center>
     </Container>
