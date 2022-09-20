@@ -86,7 +86,7 @@ const OverviewLayout = props => {
       <Box borderWidth='1px' borderRadius='lg' p='3' align='center' w='44' h='28' _hover={{ background: "gray.100" }}>
         <Stat>
           <StatLabel>Return On Assets</StatLabel>
-          <StatNumber>{props.overview?.ReturnOnAssetsTTM && parseInt(props.overview?.ReturnOnAssetsTTM*100)+'%'}</StatNumber>
+          <StatNumber>{props.overview?.ReturnOnAssetsTTM && Number(props.overview?.ReturnOnAssetsTTM*100).toFixed(2)+'%'}</StatNumber>
           <StatHelpText fontSize='12'>Trailing Twelve Months</StatHelpText>
         </Stat>
       </Box>
@@ -94,7 +94,7 @@ const OverviewLayout = props => {
       <Box borderWidth='1px' borderRadius='lg' p='3' align='center' w='44' h='28' _hover={{ background: "gray.100" }}>
         <Stat>
           <StatLabel>Return On Equity</StatLabel>
-          <StatNumber>{props.overview?.ReturnOnEquityTTM && parseInt(props.overview?.ReturnOnEquityTTM*100)+'%'}</StatNumber>
+          <StatNumber>{props.overview?.ReturnOnEquityTTM && Number(props.overview?.ReturnOnEquityTTM*100).toFixed(2)+'%'}</StatNumber>
           <StatHelpText fontSize='12'>Trailing Twelve Months</StatHelpText>
         </Stat>
       </Box>
@@ -135,7 +135,7 @@ const OverviewLayout = props => {
       <Box borderWidth='1px' borderRadius='lg' p='3' align='center' w='44' h='28' _hover={{ background: "gray.100" }}>
         <Stat>
           <StatLabel>QoQ Earnings Growth</StatLabel>
-          <StatNumber>{props.overview?.QuarterlyEarningsGrowthYOY && parseInt(props.overview?.QuarterlyEarningsGrowthYOY*100)+'%'}</StatNumber>
+          <StatNumber>{props.overview?.QuarterlyEarningsGrowthYOY && Number(props.overview?.QuarterlyEarningsGrowthYOY*100).toFixed(2)+'%'}</StatNumber>
           <StatHelpText fontSize='12'>Year Over Year</StatHelpText>
         </Stat>
       </Box>
@@ -143,14 +143,14 @@ const OverviewLayout = props => {
       <Box borderWidth='1px' borderRadius='lg' p='3' align='center' w='44' h='28' _hover={{ background: "gray.100" }}>
         <Stat>
           <StatLabel>Profit Margin</StatLabel>
-          <StatNumber>{props.overview?.ProfitMargin && parseInt(props.overview?.ProfitMargin*100)+'%'}</StatNumber>
+          <StatNumber>{props.overview?.ProfitMargin && Number(props.overview?.ProfitMargin*100).toFixed(2)+'%'}</StatNumber>
         </Stat>
       </Box>
 
       <Box borderWidth='1px' borderRadius='lg' p='3' align='center' w='44' h='28' _hover={{ background: "gray.100" }}>
         <Stat>
           <StatLabel>Operating Margin</StatLabel>
-          <StatNumber>{props.overview?.OperatingMarginTTM && parseInt(props.overview?.OperatingMarginTTM*100)+'%'}</StatNumber>
+          <StatNumber>{props.overview?.OperatingMarginTTM && Number(props.overview?.OperatingMarginTTM*100).toFixed(2)+'%'}</StatNumber>
           <StatHelpText fontSize='12'>Trailing Twelve Months</StatHelpText>
         </Stat>
       </Box>
@@ -190,7 +190,7 @@ const OverviewLayout = props => {
       <Box borderWidth='1px' borderRadius='lg' p='3' align='center' w='44' h='28' _hover={{ background: "gray.100" }}>
         <Stat>
           <StatLabel>Dividend Yield</StatLabel>
-          <StatNumber>{props.overview?.DividendYield && Number(props.overview?.DividendYield*100)+'%'}</StatNumber>
+          <StatNumber>{props.overview?.DividendYield && Number(props.overview?.DividendYield*100).toFixed(2)+'%'}</StatNumber>
           <StatHelpText fontSize='12'>Trailing Twelve Months</StatHelpText>
         </Stat>
       </Box>
