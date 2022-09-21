@@ -12,6 +12,4 @@ Stack
 - Vercel (deployment)
 
 ### Preview
-<video width="320" height="240" controls>
-  <source src="https://www.youtube.com/watch?v=ek1j272iAmc" type="video/mp4">
-</video>
+[![Preview Video](https://github.com/ArturAronov/stock-finder/blob/main/docs/preview.gif)](https://youtu.be/h4QuwgP47LI)
