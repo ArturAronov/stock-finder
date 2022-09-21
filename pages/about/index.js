@@ -8,6 +8,7 @@ const About = () => {
 
       <UnorderedList>
         <ListItem>NextJS</ListItem>
+        <ListItem>S.W.R.</ListItem>
         <ListItem>Stock market API (Alpha Vantage)</ListItem>
         <ListItem>Chakra UI</ListItem>
         <ListItem>ChartJS</ListItem>
