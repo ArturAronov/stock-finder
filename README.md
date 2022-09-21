@@ -13,3 +13,8 @@ Stack
 
 ### Preview
 https://youtu.be/h4QuwgP47LI
+
+
+<p align="center">
+  <img width="400" src="./docs/preview.png">
+</p>
